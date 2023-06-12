@@ -7,7 +7,7 @@
         function button1Clicked() {
             var counterElement = document.getElementById("counter");
             console.log("Sending -> Approved and " + counterElement.value)
-            NativeAppsHandler.processOrder("Approved", counterElement.value)
+            NativeAppsHandler.processOrder("Approved", counterElement.innerText)
         }
         
         // JavaScript function to increase the counter when Button 2 is clicked
