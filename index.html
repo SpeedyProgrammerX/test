@@ -5,7 +5,8 @@
     <script>
         // JavaScript function to be invoked when Button 1 is clicked
         function button1Clicked() {
-            alert("Button 1 clicked!");
+            var counterElement = document.getElementById("counter");
+            Android.processOrder('Approved', counterElement.innerText)
         }
         
         // JavaScript function to increase the counter when Button 2 is clicked
@@ -14,18 +15,12 @@
             var counterValue = parseInt(counterElement.innerText);
             counterElement.innerText = counterValue + 1;
         }
-
-        function getCounterValue() {
-            var counterElement = document.getElementById("counter");
-            var counterValue = parseInt(counterElement.innerText);
-            return counterValue.toString()
-        }
     </script>
 </head>
 <body>
     <h1>Devansh Pay</h1>
     <h2 id="counter">0</h2>
-    <button onclick="processOrder('Approved', getCounterValue())">Go back to App</button>
+    <button onclick="button1Clicked()">Go back to App</button>
     <button onclick="increaseCounter()">Increase Counter</button>
 </body>
 </html>
