@@ -6,8 +6,17 @@
         // JavaScript function to be invoked when Button 1 is clicked
         function button1Clicked() {
             var counterElement = document.getElementById("counter");
-            console.log("Sending -> Approved and " + counterElement.value)
             NativeAppsHandler.processOrder("Approved", counterElement.innerText)
+        }
+
+        function iOSWebViewClicked(str) {
+            var counterElement = document.getElementById("counter");
+            NativeAppsHandler.processOrder(str, counterElement.innerText)
+        }
+        
+        function androidWebViewClicked(str) {
+            var counterElement = document.getElementById("counter");
+            NativeAppsHandler.processOrder(str, counterElement.innerText)
         }
         
         // JavaScript function to increase the counter when Button 2 is clicked
@@ -21,7 +30,17 @@
 <body>
     <h1>Devansh Pay V1.21</h1>
     <h2 id="counter">0</h2>
-    <button onclick="button1Clicked()">Go back to App</button>
+    <button onclick="button1Clicked()">Go back to App (Android)</button>
+    <button onclick="button1Clicked()">Go back to App (iOS)</button>
+
+    <button onclick="iOSWebViewClicked('Approved')">Approved State (iOS)</button>
+    <button onclick="iOSWebViewClicked('Failed')">Failed State (iOS)</button>
+    <button onclick="iOSWebViewClicked('Partial')">Partial Approved State (iOS)</button>
+
+    <button onclick="androidWebViewClicked('Approved')">Approved State (iOS)</button>
+    <button onclick="androidWebViewClicked('Failed')">Failed State (iOS)</button>
+    <button onclick="androidWebViewClicked('Partial')">Partial Approved State (iOS)</button>
+    
     <button onclick="increaseCounter()">Increase Counter</button>
 </body>
 </html> 
