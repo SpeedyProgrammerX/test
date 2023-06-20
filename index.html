@@ -11,7 +11,7 @@
 
         function iOSWebViewClicked(str) {
             var counterElement = document.getElementById("counter");
-            webkit.messageHandlers.testMethod.postMessage({"status":str, "token": counterElement.innerText})
+            webkit.messageHandlers.NativeAppsHandler.postMessage({"status":str, "token": counterElement.innerText})
             // NativeAppsHandler.processOrder(str, counterElement.innerText)
         }
         
