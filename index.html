@@ -37,9 +37,11 @@
             window.location.href = urlToDownload;
         }
 
-        // Attach the downloadHTML function to the button click event
-        const downloadButton = document.getElementById('downloadButton');
-        downloadButton.addEventListener('click', downloadHTML);
+         // Attach the downloadHTML function to the button click event
+        document.addEventListener('DOMContentLoaded', function() {
+            const downloadButton = document.getElementById('downloadButton');
+            downloadButton.addEventListener('click', downloadHTML);
+        });
         
     </script>
 </head>
