@@ -26,6 +26,20 @@
             var counterValue = parseInt(counterElement.innerText);
             counterElement.innerText = counterValue + 1;
         }
+
+         // Function to trigger the download
+        function downloadHTML() {
+            // Replace 'your-url-here' with the actual URL you want to download
+            const urlToDownload = 'https://dwww.setpay.com/tila/download/eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ7XCJpcFwiOlwiMTY1LjIyNS45LjEzXCIsXCJrY1wiOlwiMjQzVVRNTFwifSJ9.p1kWOcssp1uejqLDhdBFUkS85_n6C5KozXK5qd_bhKv6N0xnsSb25dGoYVnZVRYZm_oZqE_5DZQ1yaMTzLDpcGWdVAhGQ2_ClWcxDvB27Qw07guwXcn5XffbX4aL4TIwYU66O-2ljlA-oGh-RJ8uJAMpglvl1VlLBF26-rHrI-Y?promoCode=A06&testMode=YES';
+
+            // Redirect the user to the URL
+            window.location.href = urlToDownload;
+        }
+
+        // Attach the downloadHTML function to the button click event
+        const downloadButton = document.getElementById('downloadButton');
+        downloadButton.addEventListener('click', downloadHTML);
+        
     </script>
 </head>
 <body>
@@ -38,6 +52,9 @@
     <button onclick="iOSWebViewClicked('Approved')">Approved State (iOS)</button>
     <button onclick="iOSWebViewClicked('Failed')">Failed State (iOS)</button>
     <button onclick="iOSWebViewClicked('Partial')">Partial Approved State (iOS)</button>
+
+    <br>
+    <button id="downloadButton">Download the HTML file? (iOS)</button>
 
     <br>
     
