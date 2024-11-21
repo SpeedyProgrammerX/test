@@ -17,7 +17,11 @@
 
         function setPayload(payloadData) {
             payload = payloadData
+            var counterElement = document.getElementById("counter2");
+            var counterValue = parseInt(counterElement.innerText);
+            counterElement.innerText = counterValue + 1;
             document.getElementById('payload-field').value = JSON.stringify(payload);
+            console.log(payloadData)
         }
 
 
@@ -81,7 +85,7 @@
     <button onclick="increaseCounter()">Increase Counter</button>
 
 
-    <h1>Devansh Progressive Pay V1.0</h1>
+    <h1>Devansh Progressive Pay V1.01</h1>
     <h2 id="counter2">0</h2>
     <button onclick="button2Clicked()">Fetch Data from Apps</button>
     <label for="payload-field">Payload Field:</label>
