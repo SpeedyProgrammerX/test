@@ -4,10 +4,22 @@
     <title>Devansh Pay</title>
     <script type="text/javascript">
         // JavaScript function to be invoked when Button 1 is clicked
+        let payload = null;
+
         function button1Clicked() {
             var counterElement = document.getElementById("counter");
             NativeAppsHandler.processOrder("Approved", counterElement.innerText)
         }
+
+        function button2Clicked() {
+            NativeAppsHandler.getData();
+        }
+
+        function setPayload(payloadData) {
+            payload = payloadData
+            document.getElementById('payload-field').value = JSON.stringify(payload);
+        }
+
 
         function iOSWebViewClicked(str) {
             var counterElement = document.getElementById("counter");
@@ -67,6 +79,14 @@
 
     <br>
     <button onclick="increaseCounter()">Increase Counter</button>
+
+
+    <h1>Devansh Progressive Pay V1.0</h1>
+    <h2 id="counter2">0</h2>
+    <button onclick="button2Clicked()">Fetch Data from Apps</button>
+    <label for="payload-field">Payload Field:</label>
+    <input type="text" id="payload-field" readonly />
+
 </body>
 </html> 
 <!-- <html>
