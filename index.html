@@ -15,7 +15,8 @@
             var counterElement = document.getElementById("counter2");
             var counterValue = parseInt(counterElement.innerText);
             counterElement.innerText = counterValue + 1;
-            NativeAppsHandler.getData();
+            document.getElementById('payload-field').value = JSON.stringify(payload);
+            console.log(payloadData)
         }
 
         function setPayload(payloadData) {
@@ -107,7 +108,7 @@
     <button onclick="increaseCounter()">Increase Counter</button>
 
 
-    <h1>Devansh Progressive Pay V1.02</h1>
+    <h1>Devansh Progressive Pay V1.03</h1>
     <h2 id="counter2">0</h2>
     <h2 id="counter3">0</h2>
     <button onclick="button2Clicked()">Fetch Data from Apps</button>
