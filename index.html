@@ -61,7 +61,26 @@
             const downloadButton = document.getElementById('downloadButton');
             downloadButton.addEventListener('click', downloadHTML);
         });
-        
+
+        // Function to load the value from sessionStorage when the page loads
+        window.onload = function() {
+            // Check if there's a value stored in sessionStorage for 'userInput'
+            const storedValue = sessionStorage.getItem('userInput');
+            payload = sessionStorage.getItem('payloadData')
+            setPayload(payload)
+
+            // If there's a stored value, set it as the value of the text field
+            if (storedValue) {
+                document.getElementById('textfield').value = storedValue;
+            }
+        };
+
+        // Function to update sessionStorage when the user changes the text field
+        function updateSessionStorage() {
+            const userInput = document.getElementById('textfield').value;
+            sessionStorage.setItem('userInput', userInput);
+        }
+
     </script>
 </head>
 <body>
@@ -94,6 +113,13 @@
     <button onclick="button2Clicked()">Fetch Data from Apps</button>
     <label for="payload-field">Payload Field:</label>
     <input type="text" id="payload-field" readonly />
+
+    <h1>Session Storage Text Field</h1>
+
+    <label for="textfield">Enter something:</label>
+    <input type="text" id="textfield" oninput="updateSessionStorage()">
+
+    <p>Type something in the text field, and it will be saved in sessionStorage.</p>
 
 </body>
 </html> 
